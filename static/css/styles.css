@@ -1,0 +1,9 @@
+.dish-image {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 10px;
+}
+
+.container {
+    margin-bottom: 30px;
+}
