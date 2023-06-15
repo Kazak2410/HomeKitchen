@@ -3,6 +3,7 @@ from .models import Dish
 
 
 class DishForm(ModelForm):
-    class Meta:
+    class Meta():
         model = Dish
-        fields = '__all__'
+        fields = ('name', 'description', 'ingredients',
+                  'category', 'price', 'image')
