@@ -3,8 +3,8 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-md-8">
-        {% for dish in dish_list %}
+    {% for dish in dish_list %}
+    <div class="col-md-4">
         <div class="dish">
             <img class="dish-image" src="{{ dish.image.url }}" alt="{{ dish.name }} Image">
             <h3 class="dish-title">{{ dish.name }}</h3>
@@ -12,10 +12,9 @@
                 {{ dish.description }}
             </p>
             <p class="dish-price">{{ dish.price }}₴</p>
-            <button class="btn btn-primary">Детальніше</button>
-          </div>
-        <hr>
-        {% endfor %}
+            <a href="{{ dish.get_absolute_url }}" class="btn btn-primary">Детальніше</a>
+        </div>
     </div>
+    {% endfor %}
 </div>
 {% endblock content %}

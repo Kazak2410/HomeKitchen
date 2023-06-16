@@ -6,4 +6,4 @@ class DishForm(ModelForm):
     class Meta():
         model = Dish
         fields = ('name', 'description', 'ingredients',
-                  'category', 'price', 'image')
+                  'category', 'price', 'image', 'slug')
