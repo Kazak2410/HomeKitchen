@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 <div class="row">
-    {% for dish in dish_list %}
-    <div class="col-md-4">
-        <div class="dish">
-            <img class="dish-image" src="{{ dish.image.url }}" alt="{{ dish.name }} Image">
-            <h3 class="dish-title">{{ dish.name }}</h3>
-            <p class="dish-description">
-                {{ dish.description }}
-            </p>
-            <p class="dish-price">{{ dish.price }}₴</p>
-            <a href="{{ dish.get_absolute_url }}" class="btn btn-primary">Детальніше</a>
+    {% for category in dish_category %}
+        <h1 class="category-name">{{ category.name }}</h1>
+        <div class="row">
+            {% for dish in dish_list %}
+                {% if dish.category == category %}
+                    <div class="col-md-4">
+                        <div class="dish">
+                            <img class="dish-image" src="{{ dish.image.url }}" alt="{{ dish.name }} Image">
+                            <h3 class="dish-title">{{ dish.name }}</h3>
+                            <p class="dish-ingredients">
+                                {{ dish.ingredients }}
+                            </p>
+                            <p class="dish-price">{{ dish.price }}₴</p>
+                            <a href="{{ dish.get_absolute_url }}" class="btn btn-primary">Детальніше</a>
+                        </div>
+                        <br>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-    </div>
     {% endfor %}
 </div>
 {% endblock content %}

@@ -8,11 +8,11 @@
                 <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="img-fluid">
             </div>
             <div class="col-md-6">
-                <h2 class="title-dish">{{ dish.name }}</h2>
-                <p>{{ dish.description }}</p>
+                <h2 class="dish-title">{{ dish.name }}</h2>
+                <p class="dish-description">{{ dish.description }}</p>
                 <p class="ingredients">Складові: {{ dish.ingredients }}</p>
-                <p>Категорія: {{ dish.category }}</p>
-                <p>Ціна: {{ dish.price }}₴</p>
+                <p class="dish-category">Категорія: {{ dish.category }}</p>
+                <p class="dish-price">Ціна: {{ dish.price }}₴</p>
             </div>
         </div>
     </div>
