@@ -1,8 +1,10 @@
+from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from .models import Dish
 from .forms import DishForm
 from django.urls import reverse_lazy
+from django.db.models.functions import Lower
 
 
 class DishCreateView(CreateView):
@@ -16,4 +18,13 @@ class DishDetailView(DetailView):
     model = Dish
     template_name = 'dish_detail.html'
     context_object_name = 'dish'
-    
+
+
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        dishes = Dish.objects.annotate(lower_name=Lower('name')).filter(lower_name__icontains=searched)
+
+        return render(request, 'search.html', {'searched': searched, 'dishes': dishes})
+    else:
+        return render(request, 'search.html', {})

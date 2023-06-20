@@ -20,7 +20,7 @@
     <!-- css styles -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,14 +35,34 @@
                     <a class="nav-link" href="{% url 'about_page' %}">Про нас</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Шукати страву..." aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Шукати</button>
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" type="search" placeholder="Шукати страву..." aria-label="Search" name="searched">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Шукати</button>
             </form>
         </div>
     </nav>
     <div class="container mt-5">
-        {% block content %}{% endblock content%}
+        <div class="content">
+            {% block content %}{% endblock content%}
+        </div>
     </div>
+    <footer>
+        <div class="footer-content">
+            <div class="column">
+            <div>
+                <p>Завітайте до нас: Танкістів 42</p>
+            </div>
+            <div>
+                <p>Контакти: +380 9999999</p>
+            </div>
+            </div>
+            <div class="column">
+            <div>
+                <p>Час роботи: Понеділок - Субота: 10:00 - 18:00</p>
+            </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

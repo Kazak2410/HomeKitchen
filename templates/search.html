@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+        {% if searched %}
+            <h1>You searched For {{ searched }}</h1>
+            <br/>
+            {% for dish in dishes %}
+                <a href="{% url 'dish-detail' slug=dish.slug %}">{{ dish }}</a><br/>
+            {% endfor %}
+        {% else %}
+            <h1>Hey! You Forgot To Search For ...</h1>
+        {% endif %}
+    </center>
+{% endblock content %}
