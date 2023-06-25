@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 .dish-image {
-    max-width: 300px;
-    max-height: 200px;
+    max-width: 350px;
+    max-height: 250px;
     border-radius: 5px;
 }
 
@@ -36,8 +37,13 @@ nav {
 
 .dish-ingredients {
     font-family: "Roboto";
+    font-weight: 300;
     color:  #777;
     margin-top: 8px;
+}
+
+.category-name {
+    font-family: 'Montserrat';
 }
 
 .btn {
@@ -84,10 +90,6 @@ nav {
     color: #666;
     font-size: 16px;
     line-height: 1.5;
-}
-
-.category-name {
-    font-family: "Open Sans";
 }
 
 html, body {

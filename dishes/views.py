@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
-from .models import Dish
+from django.views.generic import ListView
+from .models import Dish, Category
 from .forms import DishForm
 from django.urls import reverse_lazy
 from django.db.models.functions import Lower

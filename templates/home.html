@@ -1,26 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-    {% for category in dish_category %}
-        <h1 class="category-name">{{ category.name }}</h1>
-        <div class="row">
-            {% for dish in dish_list %}
-                {% if dish.category == category %}
-                    <div class="col-md-4">
-                        <div class="dish">
-                            <img class="dish-image" src="{{ dish.image.url }}" alt="{{ dish.name }} Image">
-                            <h3 class="dish-title">{{ dish.name }}</h3>
-                            <p class="dish-ingredients">
-                                {{ dish.ingredients }}
-                            </p>
-                            <a href="{{ dish.get_absolute_url }}" class="btn btn-primary">Детальніше</a>
-                        </div>
-                        <br>
-                    </div>
-                {% endif %}
-            {% endfor %}
+<div class="container-fluid my-5">
+  <h1 class="text-center">Нашi <span class="text-danger">страви</span></h1>
+  <div class="row mt-5">
+    <div class="owl-carousel owl-theme">
+      {% for dish in dish_list %}
+        <div class="item mb-4">
+          <div class="card border-0 shadow">
+            <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="card-img-top">
+            <div class="card-body">
+              <h4>{{ dish.name }}</h4>
+            </div>
+          </div>
         </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock content %}
