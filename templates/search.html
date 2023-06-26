@@ -3,13 +3,13 @@
 {% block content %}
     <center>
         {% if searched %}
-            <h1>You searched For {{ searched }}</h1>
+            <h1 class="search-heading">Ви шукали <span class="text-danger">{{ searched }}</span></h1>
             <br/>
             {% for dish in dishes %}
-                <a href="{% url 'dish-detail' slug=dish.slug %}">{{ dish }}</a><br/>
+                <a href="{% url 'dish-detail' slug=dish.slug %}" class="found-dish-link"><h3 class="found-dish-title">{{ dish }}</h3></a><br/>
             {% endfor %}
         {% else %}
-            <h1>Hey! You Forgot To Search For ...</h1>
+            <h1 class="search-heading">Привіт! Ви забули ввести що-небудь ...</h1>
         {% endif %}
     </center>
 {% endblock content %}

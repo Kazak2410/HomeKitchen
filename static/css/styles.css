@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 
 .dish-image {
     max-width: 350px;
@@ -20,7 +22,7 @@
 }
 
 nav {
-    font-family: "Ubuntu";
+    font-family: "Nunito";
     background-color: #f8f9fa;
     padding: 10px;
 }
@@ -31,8 +33,9 @@ nav {
 }
 
 .dish-title {
-    font-family: "Roboto";
+    font-family: "Raleway";
     color: #333;
+    font-weight: 300;
 }
 
 .dish-ingredients {
@@ -44,27 +47,19 @@ nav {
 
 .category-name {
     font-family: 'Montserrat';
+    font-weight: 500;
 }
 
-.btn {
-    font-family: 'Montserrat';
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn:hover {
+/* .btn:hover {
     background-color: #0056b3;
 }
 
 .btn {
     font-family: 'Montserrat';
+    font-weight: 500;
     font-size: 14px;
     padding: 6px 12px;
-    background-color: #007bff;
+    background-color: #ff0000;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -73,14 +68,17 @@ nav {
 
 .btn:hover {
     background-color: #0056b3;
-}
+} */
 
 .about-us {
     font-family: 'Roboto';
+    font-weight: 300;
     margin: 20px;
 }
 
 .about-us h2 {
+    font-family: 'Montserrat';
+    font-weight: 600;
     color: #333;
     font-size: 24px;
     margin-bottom: 10px;
@@ -125,6 +123,10 @@ p {
     margin: 5px 0;
 }
 
+.footer-content {
+    font-family: 'Roboto';
+}
+
 footer p {
     font-size: 14px;
     color: #666;
@@ -144,4 +146,47 @@ footer p {
     font-size: 12px;
     color: #999;
     text-align: center;
+}
+
+.dish {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.dish:hover {
+    transform: scale(1.2);
+    background-color: rgb(255, 255, 255);
+}
+
+.found-dish-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.our-dish {
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.dish-title-carousel {
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+
+.found-dish-title {
+    font-family: "Raleway";
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.found-dish-title:hover {
+    transform: scale(1.05);
+    background-color: rgb(255, 255, 255);
+}
+
+.search-heading {
+    font-family: 'Montserrat';
+    font-weight: 600;
 }

@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
     {% for category in dish_category %}
-        <h1 class="category-name">{{ category.name }}<span>{{ category.name }}</span></h1>
+        <h1 class="category-name">{{ category.name }}</h1>
         <div class="row">
             {% for dish in dish_list %}
                 {% if dish.category == category %}
@@ -14,7 +14,7 @@
                             <p class="dish-ingredients">
                                 {{ dish.ingredients }}
                             </p>
-                            <a href="{{ dish.get_absolute_url }}" class="btn btn-primary">Детальніше</a>
+                            <a href="{{ dish.get_absolute_url }}" class="btn btn-danger">Детальніше</a>
                         </div>
                         <br>
                     </div>
